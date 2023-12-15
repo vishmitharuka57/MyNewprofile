@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Drop Animation</title>
+
+    <style>
+
+        div {
+            width: 10px;
+            height: 10px;
+            border: 3px solid blue;
+            border-radius: 100%;
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            animation-name: water-drop;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes water-drop {
+            from {
+                width: 10px;
+                height: 10px;
+            }
+            to {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

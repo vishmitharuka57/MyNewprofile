@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Transition - Navigation</title>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+    <style>
+
+        section {
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        section>div {
+            background-color: mediumpurple;
+            width: 250px;
+            height: 50px;
+            margin: 10px 0px 10px 0px;
+            cursor: pointer;
+
+            position: relative;
+            right: 220px;
+
+            transition-duration: 2s;
+        }
+
+        section>div>h3 {
+            position: absolute;
+            width: max-content;
+            top: 0;
+            bottom: 0;
+            left: 10px;
+            margin: auto;
+            height: max-content;
+        }
+
+        section>div>i {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            height: max-content;
+            right: 10px;
+        }
+
+        section>div:hover {
+            right: 10px;
+            color: white;
+            background-color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<section>
+
+    <div>
+        <h3>Menu One</h3>
+        <i class="fa-solid fa-address-book"></i>
+    </div>
+
+
+    <div><h3>Menu Two</h3><i class="fa-solid fa-truck-medical"></i></div>
+    <div><h3>Menu Three</h3><i class="fa-solid fa-truck-medical"></i></div>
+    <div><h3>Menu Four</h3><i class="fa-solid fa-layer-group"></i></div>
+    <div><h3>Menu Five</h3><i class="fa-solid fa-cart-plus"></i></div>
+</section>
+
+</body>
+</html>

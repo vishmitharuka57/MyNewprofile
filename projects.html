@@ -1,0 +1,622 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Cabin', sans-serif;
+            font-family: 'Rubik', sans-serif;
+        }*/
+
+        .card{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            width: 400px;
+            height: 300px;
+            transform-style: preserve-3d;
+            perspective: 600px;
+            transition: 0.5s;
+        }
+
+        .card .front{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+        }
+
+        .card:hover .front{
+            transform: rotateX(-180deg);
+        }
+
+        .card .back{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            transition: 0.5s;
+        }
+
+        .card:hover .back{
+            transform: rotateX(0deg);
+        }
+
+
+        /*&#45;&#45; Flex Container &#45;&#45;*/
+        body>div {
+            height: 400px;
+            position: relative;
+            top: 15vh;
+           /* left: 6vw;*/
+            /*border: 3px solid orange;*/
+            display: flex;
+            justify-content: space-around;
+        }
+
+      /*  body>div>div {
+            width: 120px;
+            height: 200px;
+            box-shadow: 10px 10px 20px mediumpurple;
+        }
+
+        body>div>div:first-child {
+            background-color: lightpink;
+        }
+        body>div>div:nth-child(2) {
+            align-self: center;
+            background-color: pink;
+        }
+        body>div>div:nth-child(3) {
+            align-self: self-end;
+            background-color: hotpink;
+        }
+        body>div>div:nth-child(4) {
+            align-self: center;
+            background-color: deeppink;
+        }
+        body>div>div:nth-child(5) {
+            background-color: red;
+        }
+        body>div>div:nth-child(6) {
+            align-self: center;
+            background-color: darkred;
+        }*/
+
+    </style>
+
+</head>
+<body>
+
+<div >
+    <div class="card">
+        <div class="front"><img src="assets/images/slide/slide1.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>abcd</h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="front"><img src="assets/images/slide/slide1.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>abcd</h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="front"><img src="assets/images/slide/slide1.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>abcd</h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="front"><img src="assets/images/slide/slide1.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>abcd</h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="front"><img src="assets/images/slide/slide1.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>abcd</h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="front"><img src="assets/images/slide/slide1.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>abcd</h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+           ;
+        }
+        body {
+            width: 100vw;
+            text-align: center;
+            padding-top: 10px;
+            background: linear-gradient(to right,#3c1361,ghostwhite,#52307c);
+        }
+
+        nav{
+            display: flex;
+            width: 100%;
+            position: fixed;
+            justify-content: space-around;
+            height: 70px;
+            line-height: 70px;
+            z-index: 111;
+
+        }
+        nav #icon{
+            color:black;
+            font-size: 30px;
+            line-height: 80px;
+            float: right;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .logo{
+            display: flex;
+            font-size: 35px;
+            font-weight: 800;
+            color:#190033;
+            letter-spacing: 3px;
+            cursor: pointer;
+            text-transform: uppercase;
+
+        }
+
+        .navItem{
+
+            display: flex;
+        }
+
+        .navItem li{
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        .navItem li a{
+            font-size: 25px;
+            color: #330066;
+            letter-spacing: 3px;
+            text-decoration: none;
+            text-transform: capitalize;
+            opacity: 0;
+            animation: slideTop .5s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+        /*::-webkit-scrollbar{
+            display: none;
+        }*/
+
+        .navItem li:hover a{
+            color:#4B0082;
+            box-shadow: 0 0 20px #8B008B;
+        }
+
+        .navItem li:active a{
+            color: #4B0082 ;
+        }
+        /* CONTAINER FOR ALL CARDS */
+        .cards-container {
+            width: 100%;
+            top: 130px;
+            left: 150px;
+            border-radius: 10px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        /* ALL CARDS  */
+        .flip-card {
+            width: 230px;
+            height: 230px;
+            border-radius: 20px;
+            perspective: 1000px;
+            background-color: transparent;
+        }
+
+        .card{
+            /*position: absolute;*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            width: 330px;
+            height: 240px;
+            transform-style: preserve-3d;
+            perspective: 600px;
+            transition: 0.5s;
+        }
+        .card .front{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+        }
+        .card:hover .front{
+            transform: rotateX(-180deg);
+        }
+        .card .back{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: plum;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            transition: 0.5s;
+        }
+        .card:hover .back{
+            transform: rotateX(0deg);
+        }
+        /*-- Flex Container --*/
+        body>div {
+            height: 400px;
+            position: relative;
+            top: 15vh;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button{
+            position: relative;
+            top: 5px;
+            width: 80px;
+            height: 40px;
+            color: black;
+            background-color: white;
+            border-radius: 10%;
+        }
+        img{
+            width: 330px;
+            height: 220px;
+        }
+        i{
+            width: 20px;
+            height: 20px;
+        }
+        p{
+            font-size: 13px;
+        }
+        h2{
+            font-size: 23px;
+            text-align: center;
+            color: transparent;
+            -webkit-text-stroke:2px #3c1361;
+        }
+        h3{
+            font-size: 43px;
+            text-align: center;
+            color: transparent;
+            -webkit-text-stroke:2px #4B0082
+        }
+        .btn1{
+            position: absolute;
+             left: 0;
+            align-items: center;
+            width: 120px;
+            height: 50px;
+            color: white;
+            background-color: purple;
+            border-radius: 10%;
+        }
+        .btn2{
+            position: absolute;
+            right: 0;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 50px;
+            color: white;
+            background-color: purple;
+            border-radius: 10%;
+        }
+
+        .btn1 a{
+            color: white;
+        }
+
+        .btn2 a{
+            color: white;
+        }
+
+        .assignments {
+            position: relative;
+            top: 30vh;
+            left: 50vw;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+<h3 style="align-items: center">My Projects</h3>
+<button class="btn1"><a href="index1.html">Home</a></button>
+ <button class="btn2" ><a href="#assignment">see Other Assignments</a></button>
+
+<div class="cards-container" >
+    <div class="card">
+        <!--============= hotel  using javafx=-->
+        <div class="front"><img src="assets/images/hotel.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Hotel Management System</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <button><a href="https://github.com/vishmitharuka57/hotelBlueocean.git">see project</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============================  library using orm====-->
+    <div class="card">
+        <div class="front"><img src="assets/images/library.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Library Management System</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="">see project</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <!--==========student management using programming fundementals====================-->
+        <div class="front"><img src="assets/images/student.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Student Management</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+       <!-- =========== chat app using socket programming=============-->
+        <div class="front"><img src="assets/images/chatapp.png" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Chat App</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="https://github.com/vishmitharuka57/CourseWorkOfINP.git">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============= library using oop============-->
+    <div class="card">
+        <div class="front"><img src="assets/images/library2.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Library Management</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="https://github.com/vishmitharuka57/library-mng-sys.git">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==============hotel using LA===============-->
+    <div class="card">
+        <div class="front"><img src="assets/images/hotelLA.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Hotel</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--//////////////////////////==========================///////////////////////////-->
+<br><br><br><br><br><br>
+<h3 id="assignment">My Assignments</h3>
+<section class="assignments">
+
+<div class="cards-container1" >
+    <div class="card">
+        <!--============= Assignment1=-->
+        <div class="front"><img src="assets/images/mehome.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Assignment1</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="assets/projects/Assignments/assignment1.html">see project</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============================  Assignment1m====-->
+    <div class="card">
+        <div class="front"><img src="assets/images/mehome.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Assignment1</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="assets/projects/Assignments/assignment2.html">see project</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <!--==========Assignment1===================-->
+        <div class="front"><img src="assets/images/mehome.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Assignment1</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="assets/projects/Assignments/assignment3.html">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <!-- =========== Assignment1=============-->
+        <div class="front"><img src="assets/images/mehome.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Assignment1</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="assets/projects/Assignments/assignment4.html">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============= Assignment1============-->
+    <div class="card">
+        <div class="front"><img src="assets/images/mehome.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Assignment1</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="assets/projects/Assignments/assignment5.html">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==============Assignment1===============-->
+    <div class="card">
+        <div class="front"><img src="assets/images/mehome.jpg" alt=""></div>
+        <div class="back">
+            <div class="detail">
+                <h2>Assignment1</h2>
+                <div class="social-icon">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus
+                        dolorum eveniet facilis.</p>
+                    <a href="#"><i class="fa-brands fa-github"></i>
+                    </a>
+                    <button><a href="assets/projects/Assignments/assignment6.html">see project</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+</body>
+</html>
